@@ -1,1 +1,1 @@
-Kółko i krzyżeyk
+Kółko i krzyżyk
