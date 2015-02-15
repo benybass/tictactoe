@@ -2,8 +2,11 @@ package net.beny.tictactoe;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.view.View;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -36,4 +39,12 @@ public class MainActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
-}
+
+    public void klik(View view) {
+        // Do something in response to button click
+        // Log.i("TAG", zx.toString());
+        Button button = (Button) view;
+        button.setText(R.string.x);
+    }
+
+    }

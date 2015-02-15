@@ -46,7 +46,9 @@
             android:layout_column="4"
             android:clickable="true"
             android:height="75dp"
-            android:width="75dp" />
+            android:width="75dp"
+            android:onClick="klik"
+            android:nestedScrollingEnabled="false" />
 
         <Button
             android:layout_width="wrap_content"
@@ -56,7 +58,8 @@
             android:layout_row="12"
             android:layout_column="5"
             android:height="75dp"
-            android:width="75dp" />
+            android:width="75dp"
+            android:onClick="klik" />
 
         <Button
             android:layout_width="wrap_content"
@@ -66,7 +69,8 @@
             android:layout_row="12"
             android:layout_column="6"
             android:height="75dp"
-            android:width="75dp" />
+            android:width="75dp"
+            android:onClick="klik" />
 
         <Button
             android:layout_width="wrap_content"
@@ -76,7 +80,8 @@
             android:layout_row="13"
             android:layout_column="4"
             android:height="75dp"
-            android:width="75dp" />
+            android:width="75dp"
+            android:onClick="klik" />
 
         <Button
             android:layout_width="wrap_content"
@@ -86,7 +91,8 @@
             android:layout_row="13"
             android:layout_column="5"
             android:height="75dp"
-            android:width="75dp" />
+            android:width="75dp"
+            android:onClick="klik" />
 
         <Button
             android:layout_width="wrap_content"
@@ -96,7 +102,8 @@
             android:layout_row="13"
             android:layout_column="6"
             android:height="75dp"
-            android:width="75dp" />
+            android:width="75dp"
+            android:onClick="klik" />
 
         <Button
             android:layout_width="wrap_content"
@@ -106,7 +113,8 @@
             android:layout_row="14"
             android:layout_column="4"
             android:height="75dp"
-            android:width="75dp" />
+            android:width="75dp"
+            android:onClick="klik" />
 
         <Button
             android:layout_width="wrap_content"
@@ -116,7 +124,8 @@
             android:layout_row="14"
             android:layout_column="5"
             android:height="75dp"
-            android:width="75dp" />
+            android:width="75dp"
+            android:onClick="klik" />
 
         <Button
             android:layout_width="wrap_content"
@@ -126,7 +135,8 @@
             android:layout_row="14"
             android:layout_column="6"
             android:height="75dp"
-            android:width="75dp" />
+            android:width="75dp"
+            android:onClick="klik" />
 
     </GridLayout>
 
