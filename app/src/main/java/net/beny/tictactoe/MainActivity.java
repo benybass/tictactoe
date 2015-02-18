@@ -40,11 +40,22 @@ public class MainActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    int ruch = 1;
+
     public void klik(View view) {
         // Do something in response to button click
         // Log.i("TAG", zx.toString());
         Button button = (Button) view;
-        button.setText(R.string.x);
+
+        if ( ruch%2 != 0 ) {
+            button.setText(R.string.x);
+            ruch++;
+
+        } else {
+            button.setText(R.string.o);
+            ruch++;
+
+        }
     }
 
     }
