@@ -2,7 +2,6 @@
 <resources>
 
     <string name="app_name">TicTacToe</string>
-    <string name="action_settings">Settings</string>
     <string name="app_name_pl">Kółko i Krzyżyk</string>
     <string name="x">X</string>
     <string name="o">O</string>
