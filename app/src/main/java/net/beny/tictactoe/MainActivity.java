@@ -49,12 +49,13 @@ public class MainActivity extends ActionBarActivity {
 
         if ( ruch%2 != 0 ) {
             button.setText(R.string.x);
+            button.setEnabled(false);
             ruch++;
 
         } else {
             button.setText(R.string.o);
+            button.setEnabled(false);
             ruch++;
-
         }
     }
 

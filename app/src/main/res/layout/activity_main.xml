@@ -54,7 +54,8 @@
             android:width="85dp"
             android:onClick="klik"
             android:nestedScrollingEnabled="false"
-            android:textSize="30sp" />
+            android:textSize="30sp"
+            android:enabled="true" />
 
         <Button
             android:layout_width="wrap_content"
@@ -66,7 +67,8 @@
             android:height="85dp"
             android:width="85dp"
             android:onClick="klik"
-            android:textSize="30sp" />
+            android:textSize="30sp"
+            android:enabled="true" />
 
         <Button
             android:layout_width="wrap_content"
@@ -78,7 +80,8 @@
             android:height="85dp"
             android:width="85dp"
             android:onClick="klik"
-            android:textSize="30sp" />
+            android:textSize="30sp"
+            android:enabled="true" />
 
         <Button
             android:layout_width="wrap_content"
@@ -90,7 +93,8 @@
             android:height="85dp"
             android:width="85dp"
             android:onClick="klik"
-            android:textSize="30sp" />
+            android:textSize="30sp"
+            android:enabled="true" />
 
         <Button
             android:layout_width="wrap_content"
@@ -102,7 +106,8 @@
             android:height="85dp"
             android:width="85dp"
             android:onClick="klik"
-            android:textSize="30sp" />
+            android:textSize="30sp"
+            android:enabled="true" />
 
         <Button
             android:layout_width="wrap_content"
@@ -114,7 +119,8 @@
             android:height="85dp"
             android:width="85dp"
             android:onClick="klik"
-            android:textSize="30sp" />
+            android:textSize="30sp"
+            android:enabled="true" />
 
         <Button
             android:layout_width="wrap_content"
@@ -126,7 +132,8 @@
             android:height="85dp"
             android:width="85dp"
             android:onClick="klik"
-            android:textSize="30sp" />
+            android:textSize="30sp"
+            android:enabled="true" />
 
         <Button
             android:layout_width="wrap_content"
@@ -138,7 +145,8 @@
             android:height="85dp"
             android:width="85dp"
             android:onClick="klik"
-            android:textSize="30sp" />
+            android:textSize="30sp"
+            android:enabled="true" />
 
         <Button
             android:layout_width="wrap_content"
@@ -150,7 +158,8 @@
             android:height="85dp"
             android:width="85dp"
             android:onClick="klik"
-            android:textSize="30sp" />
+            android:textSize="30sp"
+            android:enabled="true" />
 
     </GridLayout>
 
