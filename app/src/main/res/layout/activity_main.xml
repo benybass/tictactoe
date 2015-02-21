@@ -28,7 +28,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/button_1x1"
+            android:id="@+id/button_0x0"
             android:layout_row="0"
             android:layout_column="0"
             android:clickable="true"
@@ -42,7 +42,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/button_1x2"
+            android:id="@+id/button_0x1"
             android:layout_row="0"
             android:layout_column="1"
             android:height="85dp"
@@ -54,9 +54,57 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/button_1x3"
+            android:id="@+id/button_0x2"
             android:layout_row="0"
             android:layout_column="2"
+            android:height="85dp"
+            android:width="85dp"
+            android:onClick="klik"
+            android:textSize="30sp"
+            android:enabled="true" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button_1x0"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:height="85dp"
+            android:width="85dp"
+            android:onClick="klik"
+            android:textSize="30sp"
+            android:enabled="true" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button_1x1"
+            android:layout_row="1"
+            android:layout_column="1"
+            android:height="85dp"
+            android:width="85dp"
+            android:onClick="klik"
+            android:textSize="30sp"
+            android:enabled="true" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button_1x2"
+            android:layout_row="1"
+            android:layout_column="2"
+            android:height="85dp"
+            android:width="85dp"
+            android:onClick="klik"
+            android:textSize="30sp"
+            android:enabled="true" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button_2x0"
+            android:layout_row="2"
+            android:layout_column="0"
             android:height="85dp"
             android:width="85dp"
             android:onClick="klik"
@@ -67,8 +115,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/button_2x1"
-            android:layout_row="1"
-            android:layout_column="0"
+            android:layout_row="2"
+            android:layout_column="1"
             android:height="85dp"
             android:width="85dp"
             android:onClick="klik"
@@ -79,54 +127,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/button_2x2"
-            android:layout_row="1"
-            android:layout_column="1"
-            android:height="85dp"
-            android:width="85dp"
-            android:onClick="klik"
-            android:textSize="30sp"
-            android:enabled="true" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/button_2x3"
-            android:layout_row="1"
-            android:layout_column="2"
-            android:height="85dp"
-            android:width="85dp"
-            android:onClick="klik"
-            android:textSize="30sp"
-            android:enabled="true" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/button_3x1"
-            android:layout_row="2"
-            android:layout_column="0"
-            android:height="85dp"
-            android:width="85dp"
-            android:onClick="klik"
-            android:textSize="30sp"
-            android:enabled="true" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/button_3x2"
-            android:layout_row="2"
-            android:layout_column="1"
-            android:height="85dp"
-            android:width="85dp"
-            android:onClick="klik"
-            android:textSize="30sp"
-            android:enabled="true" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/button_3x3"
             android:layout_row="2"
             android:layout_column="2"
             android:height="85dp"
