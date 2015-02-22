@@ -18,6 +18,7 @@ public class MainActivity extends ActionBarActivity {
     String[][] poleGry = new String[3][3];
     Boolean czyKoniec = false;
     String ktoWygral;
+    int[] buttonsId = new int[9];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +35,7 @@ public class MainActivity extends ActionBarActivity {
                     .setTitle(R.string.koniec_gry)
                     .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int id) {
-                            //czyKoniec = false;
+                            resetGry();
                         }
                     });
             return builder.create();
@@ -45,6 +46,33 @@ public class MainActivity extends ActionBarActivity {
     public void komunikat() {
         DialogFragment newFragment = new Komunikat();
         newFragment.show(getSupportFragmentManager(), "okno_komunikatu");
+    }
+
+    //metoda do czyszczenia i resetowania gry
+    public void resetGry() {
+        czyKoniec = false;
+        ruch = 1;
+        for (int x = 0; x < 3; x++) {
+            for (int y = 0; y < 3; y++) {
+                poleGry[x][y] = "";
+            }
+        }
+        buttonsId[0] = R.id.button_0x0;
+        buttonsId[1] = R.id.button_0x1;
+        buttonsId[2] = R.id.button_0x2;
+        buttonsId[3] = R.id.button_1x0;
+        buttonsId[4] = R.id.button_1x1;
+        buttonsId[5] = R.id.button_1x2;
+        buttonsId[6] = R.id.button_2x0;
+        buttonsId[7] = R.id.button_2x1;
+        buttonsId[8] = R.id.button_2x2;
+
+        for (int id = 0; id < 9; id++) {
+            View view = findViewById(buttonsId[id]);
+            Button button = (Button) view;
+            button.setEnabled(true);
+            button.setText("");
+        }
     }
 
     //obsługa kliknięcia i główna logika gry
@@ -58,6 +86,7 @@ public class MainActivity extends ActionBarActivity {
             int pozycjaX = 0;
             int pozycjaY = 0;
 
+            //int idButton;
             //idButton = button.getId();
             //Log.i("TAG", String.valueOf(idButton));
 
