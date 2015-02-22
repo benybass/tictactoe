@@ -5,5 +5,7 @@
     <string name="app_name_pl">Kółko i Krzyżyk</string>
     <string name="x">X</string>
     <string name="o">O</string>
+    <string name="koniec_gry">Koniec Gry!</string>
+    <string name="ok">OK</string>
 
 </resources>

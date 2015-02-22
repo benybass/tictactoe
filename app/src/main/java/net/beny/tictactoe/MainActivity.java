@@ -1,5 +1,9 @@
 package net.beny.tictactoe;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
+import android.support.v4.app.DialogFragment;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,6 +17,7 @@ public class MainActivity extends ActionBarActivity {
     int ruch = 1;
     String[][] poleGry = new String[3][3];
     Boolean czyKoniec = false;
+    String ktoWygral;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +25,29 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
     }
 
+    //okno komunikatu wyniku gry
+    public class Komunikat extends DialogFragment {
+        @Override
+        public Dialog onCreateDialog(Bundle savedInstanceState) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+            builder.setMessage(ktoWygral)
+                    .setTitle(R.string.koniec_gry)
+                    .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            //czyKoniec = false;
+                        }
+                    });
+            return builder.create();
+        }
+    }
+
+    //metoda pokazująca komunikat
+    public void komunikat() {
+        DialogFragment newFragment = new Komunikat();
+        newFragment.show(getSupportFragmentManager(), "okno_komunikatu");
+    }
+
+    //obsługa kliknięcia i główna logika gry
     public void klik(View view) {
         // Do something in response to button click
         // Log.i("TAG", view.toString());
@@ -92,33 +120,42 @@ public class MainActivity extends ActionBarActivity {
             wybor[0] = "X";
             wybor[1] = "O";
 
-
             for (int w = 0; w < 2; w++) {
                 for (int x = 0; x < 3; x++) {
                     if ((poleGry[x][0] == wybor[w]) & (poleGry[x][1] == wybor[w]) & (poleGry[x][2] == wybor[w])) {
-                        Log.i("MainActivity", "Wygrywa " + wybor[w]);
+                        //Log.i("MainActivity", "Wygrywa " + wybor[w]);
                         czyKoniec = true;
+                        ktoWygral = "Wygrywa " + wybor[w];
+                        komunikat();
                     }
                 }
                 for (int y = 0; y < 3; y++) {
                     if ((poleGry[0][y] == wybor[w]) & (poleGry[1][y] == wybor[w]) & (poleGry[2][y] == wybor[w])) {
-                        Log.i("MainActivity", "Wygrywa " + wybor[w]);
+                        //Log.i("MainActivity", "Wygrywa " + wybor[w]);
                         czyKoniec = true;
+                        ktoWygral = "Wygrywa " + wybor[w];
+                        komunikat();
                     }
                 }
                 if ((poleGry[0][0] == wybor[w]) & (poleGry[1][1] == wybor[w]) & (poleGry[2][2] == wybor[w])) {
-                    Log.i("MainActivity", "Wygrywa " + wybor[w]);
+                    //Log.i("MainActivity", "Wygrywa " + wybor[w]);
                     czyKoniec = true;
+                    ktoWygral = "Wygrywa " + wybor[w];
+                    komunikat();
                 }
                 if ((poleGry[0][2] == wybor[w]) & (poleGry[1][1] == wybor[w]) & (poleGry[2][0] == wybor[w])) {
-                    Log.i("MainActivity", "Wygrywa " + wybor[w]);
+                    //Log.i("MainActivity", "Wygrywa " + wybor[w]);
                     czyKoniec = true;
+                    ktoWygral = "Wygrywa " + wybor[w];
+                    komunikat();
                 }
             }
 
             if ((ruch == 10) & (!czyKoniec)) {
-                Log.i("MainActivity", "REMIS");
+                //Log.i("MainActivity", "REMIS");
                 czyKoniec = true;
+                ktoWygral = "REMIS!";
+                komunikat();
             }
         }
     }
