@@ -6,7 +6,6 @@ import android.content.DialogInterface;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Button;
 import android.view.View;
 
@@ -18,7 +17,6 @@ public class MainActivity extends ActionBarActivity {
     String[][] poleGry = new String[3][3];
     Boolean czyKoniec = false;
     String ktoWygral;
-    int[] buttonsId = new int[9];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,18 +43,13 @@ public class MainActivity extends ActionBarActivity {
     //metoda pokazująca komunikat
     public void komunikat() {
         DialogFragment newFragment = new Komunikat();
-        newFragment.show(getSupportFragmentManager(), "okno_komunikatu");
+        newFragment.show(getSupportFragmentManager(), "oknoKomunikatu");
     }
 
     //metoda do czyszczenia i resetowania gry
     public void resetGry() {
-        czyKoniec = false;
-        ruch = 1;
-        for (int x = 0; x < 3; x++) {
-            for (int y = 0; y < 3; y++) {
-                poleGry[x][y] = "";
-            }
-        }
+        //zmienne metody
+        int[] buttonsId = new int[9];
         buttonsId[0] = R.id.button_0x0;
         buttonsId[1] = R.id.button_0x1;
         buttonsId[2] = R.id.button_0x2;
@@ -67,6 +60,17 @@ public class MainActivity extends ActionBarActivity {
         buttonsId[7] = R.id.button_2x1;
         buttonsId[8] = R.id.button_2x2;
 
+        czyKoniec = false;
+        ruch = 1;
+
+        //czyszczenie tablicy poleGry
+        for (int x = 0; x < 3; x++) {
+            for (int y = 0; y < 3; y++) {
+                poleGry[x][y] = "";
+            }
+        }
+
+        //czyszczenie przycisków
         for (int id = 0; id < 9; id++) {
             View view = findViewById(buttonsId[id]);
             Button button = (Button) view;
@@ -77,18 +81,12 @@ public class MainActivity extends ActionBarActivity {
 
     //obsługa kliknięcia i główna logika gry
     public void klik(View view) {
-        // Do something in response to button click
-        // Log.i("TAG", view.toString());
         if (!czyKoniec) {
 
-            //używane zmienne
+            //używane metody
             Button button = (Button) view;
             int pozycjaX = 0;
             int pozycjaY = 0;
-
-            //int idButton;
-            //idButton = button.getId();
-            //Log.i("TAG", String.valueOf(idButton));
 
             // przypisanie pozycji przycisku do pola Gry.
             switch (button.getId()) {
@@ -136,7 +134,6 @@ public class MainActivity extends ActionBarActivity {
                 button.setEnabled(false);
                 poleGry[pozycjaX][pozycjaY] = "X";
                 ruch++;
-
             } else {
                 button.setText(R.string.o);
                 button.setEnabled(false);
@@ -151,29 +148,29 @@ public class MainActivity extends ActionBarActivity {
 
             for (int w = 0; w < 2; w++) {
                 for (int x = 0; x < 3; x++) {
-                    if ((poleGry[x][0] == wybor[w]) & (poleGry[x][1] == wybor[w]) & (poleGry[x][2] == wybor[w])) {
-                        //Log.i("MainActivity", "Wygrywa " + wybor[w]);
+                    if ((poleGry[x][0] == wybor[w]) & (poleGry[x][1] == wybor[w]) &
+                            (poleGry[x][2] == wybor[w])) {
                         czyKoniec = true;
                         ktoWygral = "Wygrywa " + wybor[w];
                         komunikat();
                     }
                 }
                 for (int y = 0; y < 3; y++) {
-                    if ((poleGry[0][y] == wybor[w]) & (poleGry[1][y] == wybor[w]) & (poleGry[2][y] == wybor[w])) {
-                        //Log.i("MainActivity", "Wygrywa " + wybor[w]);
+                    if ((poleGry[0][y] == wybor[w]) & (poleGry[1][y] == wybor[w]) &
+                            (poleGry[2][y] == wybor[w])) {
                         czyKoniec = true;
                         ktoWygral = "Wygrywa " + wybor[w];
                         komunikat();
                     }
                 }
-                if ((poleGry[0][0] == wybor[w]) & (poleGry[1][1] == wybor[w]) & (poleGry[2][2] == wybor[w])) {
-                    //Log.i("MainActivity", "Wygrywa " + wybor[w]);
+                if ((poleGry[0][0] == wybor[w]) & (poleGry[1][1] == wybor[w]) &
+                        (poleGry[2][2] == wybor[w])) {
                     czyKoniec = true;
                     ktoWygral = "Wygrywa " + wybor[w];
                     komunikat();
                 }
-                if ((poleGry[0][2] == wybor[w]) & (poleGry[1][1] == wybor[w]) & (poleGry[2][0] == wybor[w])) {
-                    //Log.i("MainActivity", "Wygrywa " + wybor[w]);
+                if ((poleGry[0][2] == wybor[w]) & (poleGry[1][1] == wybor[w]) &
+                        (poleGry[2][0] == wybor[w])) {
                     czyKoniec = true;
                     ktoWygral = "Wygrywa " + wybor[w];
                     komunikat();
@@ -181,7 +178,6 @@ public class MainActivity extends ActionBarActivity {
             }
 
             if ((ruch == 10) & (!czyKoniec)) {
-                //Log.i("MainActivity", "REMIS");
                 czyKoniec = true;
                 ktoWygral = "REMIS!";
                 komunikat();

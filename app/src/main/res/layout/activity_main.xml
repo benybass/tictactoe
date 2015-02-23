@@ -35,7 +35,6 @@
             android:height="85dp"
             android:width="85dp"
             android:onClick="klik"
-            android:nestedScrollingEnabled="false"
             android:textSize="30sp"
             android:enabled="true" />
 
