@@ -1,9 +1,7 @@
 package net.beny.tictactoe;
 
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.DialogInterface;
-import android.support.v4.app.DialogFragment;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.widget.Button;
@@ -82,7 +80,6 @@ public class MainActivity extends ActionBarActivity {
 
     //obsługa kliknięcia i główna logika gry
     public void klik(View view) {
-
 
         //używane metody
         Button button = (Button) view;
